@@ -106,7 +106,7 @@ const PomodoroTimer = () => {
 
   return (
     <div className="text-lg mt-4">
-      <div className="text-2xl mb-2 justify-center flex">Pomodoro Sayacı</div>
+      <div className="text-2xl mb-2 justify-center flex">Pomodoro Timer</div>
       <div className="bg-black rounded-lg p-4">
         <div className="text-center text-4xl font-bold mb-4">
           {formatTime(time)}
