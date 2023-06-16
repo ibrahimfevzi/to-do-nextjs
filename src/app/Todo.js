@@ -123,7 +123,7 @@ function Todo() {
           type="text"
           value={newTodo}
           onChange={handleInputChange}
-          placeholder="Yapılacak..."
+          placeholder="Do something..."
           className="w-full rounded-l py-2 text-black px-4 border border-gray-300 text-lg"
         />
         {selectedTodo ? (
@@ -131,19 +131,19 @@ function Todo() {
             onClick={handleUpdateTodo}
             className="bg-yellow-500 text-white px-4 rounded-r"
           >
-            Güncelle
+            Edit
           </button>
         ) : (
           <button
             onClick={handleAddTodo}
             className="bg-blue-500 text-white px-4 rounded-r"
           >
-            Ekle
+            Add
           </button>
         )}
       </div>
       <h2 className="text-xl font-bold  mt-4 mb-2">
-        Yapılacaklar ({todos.length - completedTodos.length})
+        Todos ({todos.length - completedTodos.length})
       </h2>
       <ul className="list-disc   pl-4">
         {todos.map((todo) => {
@@ -170,13 +170,13 @@ function Todo() {
                   onClick={() => handleEditTodo(todo.id)}
                   className="text-blue-500 text-lg"
                 >
-                  Düzenle
+                  Edit
                 </button>
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}
                   className="text-red-500 text-lg ml-2"
                 >
-                  Sil
+                  Delete
                 </button>
               </li>
             );
@@ -185,7 +185,7 @@ function Todo() {
         })}
       </ul>
       <h2 className="text-xl font-bold mt-4 mb-2">
-        Tamamlananlar ({completedTodos.length})
+        Completed ({completedTodos.length})
       </h2>{" "}
       <ul className="list-disc pl-4">
         {completedTodos.map((todo) => (
@@ -208,7 +208,7 @@ function Todo() {
               onClick={() => handleDeleteTodo(todo.id)}
               className="text-red-500 text-lg ml-2"
             >
-              Sil
+              Delete
             </button>
           </li>
         ))}

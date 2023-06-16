@@ -117,20 +117,20 @@ const PomodoroTimer = () => {
             disabled={isActive}
             className="bg-green-500 text-white px-6 py-2 rounded-lg mr-2 mb-2"
           >
-            Başlat
+            Start
           </button>
           <button
             onClick={stopTimer}
             disabled={!isActive}
             className="bg-red-500 text-white px-6 py-2 rounded-lg mr-2 mb-2"
           >
-            Duraklat
+            Pause
           </button>
           <button
             onClick={resetTimer}
             className="bg-blue-500 text-white px-6 py-2 rounded-lg mb-2"
           >
-            Sıfırla
+            Reset
           </button>
         </div>
         <div className="mt-4 flex gap-4  flex-wrap justify-center items-center ">
@@ -139,21 +139,21 @@ const PomodoroTimer = () => {
             value={customMinutes}
             restrictedPattern="[0-9]"
             onChange={handleCustomMinutesChange}
-            placeholder="Dakika giriniz"
+            placeholder="Set minutes"
             className="border text-black border-gray-300 rounded-lg p-auto px-2 py-1 mr-2"
           />
           <input
             type="number"
             value={customSeconds}
             onChange={handleCustomSecondsChange}
-            placeholder="Saniye giriniz"
+            placeholder="Set seconds"
             className="border text-black border-gray-300 rounded-lg p-auto px-2 py-1 mr-2"
           />
           <button
             onClick={setCustomTimer}
             className="bg-blue-500 text-white px-4 py-1  rounded-lg ml-2"
           >
-            Ayarla
+            Set
           </button>
           {errorMessage && (
             <div className="text-red-500 mt-2">{errorMessage}</div>
@@ -163,12 +163,12 @@ const PomodoroTimer = () => {
       {isAlertVisible && (
         <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
           <div className="bg-black bg-transparent rounded-lg p-8 text-center">
-            <h2 className="text-2xl text-red-600 mb-4">Süre Doldu!</h2>
+            <h2 className="text-2xl text-red-600 mb-4">Time is up!</h2>
             <button
               onClick={closeTimerAlert}
               className="bg-blue-500 text-white px-6 py-2 rounded-lg"
             >
-              Kapat
+              Close
             </button>
           </div>
         </div>
