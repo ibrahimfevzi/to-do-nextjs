@@ -115,43 +115,43 @@ const PomodoroTimer = () => {
           <button
             onClick={startTimer}
             disabled={isActive}
-            className="bg-green-500 text-white px-6 py-2 rounded-lg mr-2 mb-2"
+            className="bg-green-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24"
           >
             Start
           </button>
           <button
             onClick={stopTimer}
             disabled={!isActive}
-            className="bg-red-500 text-white px-6 py-2 rounded-lg mr-2 mb-2"
+            className="bg-red-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24"
           >
             Pause
           </button>
           <button
             onClick={resetTimer}
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg mb-2"
+            className="bg-blue-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24"
           >
             Reset
           </button>
         </div>
-        <div className="mt-4 flex gap-4  flex-wrap justify-center items-center ">
+        <div className="mt-4 flex  flex-wrap justify-center ">
           <input
             type="number"
             value={customMinutes}
             restrictedPattern="[0-9]"
             onChange={handleCustomMinutesChange}
-            placeholder="Set minutes"
-            className="border text-black border-gray-300 rounded-lg p-auto px-2 py-1 mr-2"
+            placeholder="min"
+            className="border text-black border-gray-300 rounded-lg px-6 py-2 w-24 mr-2 mb-2 "
           />
           <input
             type="number"
             value={customSeconds}
             onChange={handleCustomSecondsChange}
-            placeholder="Set seconds"
-            className="border text-black border-gray-300 rounded-lg p-auto px-2 py-1 mr-2"
+            placeholder="sec"
+            className="border text-black border-gray-300 rounded-lg px-6 py-2 w-24 mr-2 mb-2"
           />
           <button
             onClick={setCustomTimer}
-            className="bg-blue-500 text-white px-4 py-1  rounded-lg ml-2"
+            className="bg-blue-500 text-white rounded-lg px-6 py-2 w-24 mr-2 mb-2"
           >
             Set
           </button>
