@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../assets/todo.png";
+import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 
 function Todo() {
   const [todos, setTodos] = useState([]);
@@ -34,6 +35,7 @@ function Todo() {
   const handleInputChange = (event) => {
     setNewTodo(event.target.value);
   };
+
   const handleAddTodo = () => {
     if (newTodo.trim() !== "") {
       const currentDate = new Date();
@@ -115,7 +117,6 @@ function Todo() {
           className="mb-4"
           style={{ width: "60px" }}
         />
-
         <h1 className="text-2xl font-bold mb-4">Todo Free</h1>
       </div>
       <div className="flex mb-2">
@@ -131,7 +132,7 @@ function Todo() {
             onClick={handleUpdateTodo}
             className="bg-yellow-500 text-white px-4 rounded-r"
           >
-            Edit
+            <RiEdit2Line />
           </button>
         ) : (
           <button
@@ -142,7 +143,7 @@ function Todo() {
           </button>
         )}
       </div>
-      <h2 className="text-xl font-bold  mt-4 mb-2">
+      <h2 className="text-xl font-bold mt-4 mb-2">
         Todos ({todos.length - completedTodos.length})
       </h2>
       <ul className="list-disc   pl-4">
@@ -170,13 +171,13 @@ function Todo() {
                   onClick={() => handleEditTodo(todo.id)}
                   className="text-blue-500 text-lg"
                 >
-                  Edit
+                  <RiEdit2Line />
                 </button>
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}
                   className="text-red-500 text-lg ml-2"
                 >
-                  Delete
+                  <RiDeleteBinLine />
                 </button>
               </li>
             );
@@ -208,7 +209,7 @@ function Todo() {
               onClick={() => handleDeleteTodo(todo.id)}
               className="text-red-500 text-lg ml-2"
             >
-              Delete
+              <RiDeleteBinLine />
             </button>
           </li>
         ))}
