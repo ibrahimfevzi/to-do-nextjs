@@ -101,7 +101,6 @@ const PomodoroTimer = () => {
 
   const closeTimerAlert = () => {
     alarmAudio.pause();
-
     setIsAlertVisible(false);
   };
 
@@ -112,47 +111,47 @@ const PomodoroTimer = () => {
         <div className="text-center text-4xl font-bold mb-4">
           {formatTime(time)}
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center flex-wrap ">
           <button
             onClick={startTimer}
             disabled={isActive}
-            className="bg-green-500 text-white px-6 py-2 rounded-lg mr-2"
+            className="bg-green-500 text-white px-6 py-2 rounded-lg mr-2 mb-2"
           >
             Başlat
           </button>
           <button
             onClick={stopTimer}
             disabled={!isActive}
-            className="bg-red-500 text-white px-6 py-2 rounded-lg mr-2"
+            className="bg-red-500 text-white px-6 py-2 rounded-lg mr-2 mb-2"
           >
             Duraklat
           </button>
           <button
             onClick={resetTimer}
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg"
+            className="bg-blue-500 text-white px-6 py-2 rounded-lg mb-2"
           >
             Sıfırla
           </button>
         </div>
-        <div className="mt-4 flex justify-center">
+        <div className="mt-4 flex gap-4  flex-wrap justify-center items-center ">
           <input
             type="number"
             value={customMinutes}
             restrictedPattern="[0-9]"
             onChange={handleCustomMinutesChange}
             placeholder="Dakika giriniz"
-            className="border text-black border-gray-300 rounded-lg px-2 py-1 mr-2"
+            className="border text-black border-gray-300 rounded-lg p-auto px-2 py-1 mr-2"
           />
           <input
             type="number"
             value={customSeconds}
             onChange={handleCustomSecondsChange}
             placeholder="Saniye giriniz"
-            className="border text-black border-gray-300 rounded-lg px-2 py-1 mr-2"
+            className="border text-black border-gray-300 rounded-lg p-auto px-2 py-1 mr-2"
           />
           <button
             onClick={setCustomTimer}
-            className="bg-blue-500 text-white px-4 py-1 rounded-lg ml-2"
+            className="bg-blue-500 text-white px-4 py-1  rounded-lg ml-2"
           >
             Ayarla
           </button>

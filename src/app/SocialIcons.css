@@ -1,0 +1,40 @@
+.social-icons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Sayfanın yukarısından gelen boşluğu ayarlayın */
+}
+
+.social-icons-spacer {
+  height: 50px; /* İkonlar arasına boşluk eklemek için yükseklik değerini ayarlayın */
+}
+
+.social-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.social-icon {
+  font-size: 32px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  color: #007bff;
+}
+
+.social-icons-title {
+  padding-top: 10px;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.social-icons-text {
+  font-size: 16px;
+  padding-top: 16px;
+  color: #333;
+  text-align: center;
+}

@@ -34,14 +34,17 @@ function Todo() {
   const handleInputChange = (event) => {
     setNewTodo(event.target.value);
   };
-
   const handleAddTodo = () => {
     if (newTodo.trim() !== "") {
+      const currentDate = new Date();
+      const options = { hour: "numeric", minute: "numeric" };
+      const timeString = currentDate.toLocaleTimeString(undefined, options);
+
       const newTodoItem = {
         id: Date.now(),
         text: newTodo,
         completed: false,
-        createdAt: new Date().toLocaleString(),
+        createdAt: `${currentDate.toLocaleDateString()} ${timeString}`,
       };
 
       setTodos([...todos, newTodoItem]);
@@ -105,9 +108,16 @@ function Todo() {
 
   return (
     <div className="max-w-3xl mx-auto p-4">
-      <Image src={logo} alt="Logo" className="mb-4" style={{ width: "60px" }} />
+      <div className="flex items-center gap-2 mb-4">
+        <Image
+          src={logo}
+          alt="Logo"
+          className="mb-4"
+          style={{ width: "60px" }}
+        />
 
-      <h1 className="text-2xl font-bold mb-4">Todo Uygulaması</h1>
+        <h1 className="text-2xl font-bold mb-4">Todo App Free</h1>
+      </div>
       <div className="flex mb-2">
         <input
           type="text"
@@ -132,11 +142,14 @@ function Todo() {
           </button>
         )}
       </div>
-      <ul className="list-disc pl-4">
+      <h2 className="text-xl font-bold  mt-4 mb-2">
+        Yapılacaklar ({todos.length - completedTodos.length})
+      </h2>
+      <ul className="list-disc   pl-4">
         {todos.map((todo) => {
           if (!todo.completed) {
             return (
-              <li key={todo.id} className="mb-2 flex items-center">
+              <li key={todo.id} className="mb-2 flex items-center flex-wrap">
                 <input
                   type="checkbox"
                   checked={todo.completed}
@@ -150,7 +163,7 @@ function Todo() {
                 >
                   {todo.text}
                 </span>
-                <span className="text-sm text-gray-500 pr-3">
+                <span className="text-xs text-gray-500  pr-3">
                   {todo.createdAt}
                 </span>
                 <button
@@ -171,11 +184,12 @@ function Todo() {
           return null;
         })}
       </ul>
-
-      <h2 className="text-xl font-bold mt-4 mb-2">Tamamlananlar</h2>
+      <h2 className="text-xl font-bold mt-4 mb-2">
+        Tamamlananlar ({completedTodos.length})
+      </h2>{" "}
       <ul className="list-disc pl-4">
         {completedTodos.map((todo) => (
-          <li key={todo.id} className="mb-2 flex items-center">
+          <li key={todo.id} className="mb-2 flex items-center flex-wrap">
             <input
               type="checkbox"
               checked={todo.completed}
@@ -189,7 +203,7 @@ function Todo() {
             >
               {todo.text}
             </span>
-            <span className="text-sm text-gray-500">{todo.createdAt}</span>
+            <span className="text-xs text-gray-500">{todo.createdAt}</span>
             <button
               onClick={() => handleDeleteTodo(todo.id)}
               className="text-red-500 text-lg ml-2"
