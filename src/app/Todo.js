@@ -116,7 +116,7 @@ function Todo() {
           style={{ width: "60px" }}
         />
 
-        <h1 className="text-2xl font-bold mb-4">Todo App Free</h1>
+        <h1 className="text-2xl font-bold mb-4">Todo Free</h1>
       </div>
       <div className="flex mb-2">
         <input
