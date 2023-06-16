@@ -162,7 +162,7 @@ const PomodoroTimer = () => {
       </div>
       {isAlertVisible && (
         <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-          <div className="bg-black rounded-lg p-8 text-center">
+          <div className="bg-black bg-transparent rounded-lg p-8 text-center">
             <h2 className="text-2xl text-red-600 mb-4">Süre Doldu!</h2>
             <button
               onClick={closeTimerAlert}
