@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import "./SocialIcons.css";
 
 const PomodoroTimer = () => {
   const [time, setTime] = useState(1500); // 25 minutes in seconds
@@ -104,54 +105,79 @@ const PomodoroTimer = () => {
     setIsAlertVisible(false);
   };
 
+  const setTimerDuration = (durationInSeconds) => {
+    setTime(durationInSeconds);
+    setIsActive(false);
+  };
+
   return (
     <div className="text-lg mt-4">
       <div className="text-2xl mb-2 justify-center flex">Pomodoro Timer</div>
-      <div className="bg-black rounded-lg  p-4">
-        <div className="text-center text-4xl font-bold mb-4">
-          {formatTime(time)}
-        </div>
-        <div className="flex justify-center flex-wrap ">
-          <button
-            onClick={startTimer}
-            disabled={isActive}
-            className="bg-green-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24"
-          >
-            Start
-          </button>
-          <button
-            onClick={stopTimer}
-            disabled={!isActive}
-            className="bg-red-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24"
-          >
-            Pause
-          </button>
-          <button
-            onClick={resetTimer}
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24"
-          >
-            Reset
-          </button>
-        </div>
-        <div className="mt-4 flex  flex-wrap justify-center ">
+      <div className="text-center text-4xl font-bold mb-4">
+        {formatTime(time)}
+      </div>
+      <div className="flex justify-center flex-wrap ">
+        <button
+          onClick={startTimer}
+          disabled={isActive}
+          className="bg-green-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24 hover:bg-green-700 transition-colors duration-300"
+        >
+          Start
+        </button>
+        <button
+          onClick={stopTimer}
+          disabled={!isActive}
+          className="bg-red-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24 hover:bg-red-700 transition-colors duration-300"
+        >
+          Pause
+        </button>
+        <button
+          onClick={resetTimer}
+          className="bg-blue-500 text-white px-6 py-2 rounded-lg mr-2 mb-2 w-24 hover:bg-orange-400 transition-colors duration-300"
+        >
+          Reset
+        </button>
+      </div>
+      <div className="flex justify-center flex-wrap ">
+        <button
+          onClick={() => setTimerDuration(300)}
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg mr-2 mb-2 w-24 hover:bg-green-600 transition-colors duration-300"
+        >
+          5 min
+        </button>
+        <button
+          onClick={() => setTimerDuration(1500)}
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg mr-2 mb-2 w-24 hover:bg-green-600 transition-colors duration-300"
+        >
+          25 min
+        </button>
+        <button
+          onClick={() => setTimerDuration(2400)}
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg mr-2 mb-2 w-24 hover:bg-green-600 transition-colors duration-300"
+        >
+          40 min
+        </button>
+      </div>
+      <div className="bg-black rounded-lg ">
+        <div className=" flex  flex-wrap justify-center ">
           <input
             type="number"
             value={customMinutes}
             restrictedPattern="[0-9]"
             onChange={handleCustomMinutesChange}
             placeholder="min"
-            className="border text-black border-gray-300 rounded-lg px-6 py-2 w-24 mr-2 mb-2 "
+            className="border text-black border-gray-300 text-center rounded-lg px-2 py-2 w-24 mr-2 mb-2 "
           />
           <input
             type="number"
             value={customSeconds}
             onChange={handleCustomSecondsChange}
             placeholder="sec"
-            className="border text-black border-gray-300 rounded-lg px-6 py-2 w-24 mr-2 mb-2"
+            className="border text-black border-gray-300 text-center rounded-lg px-2 py-2 w-24 mr-2 mb-2"
           />
           <button
             onClick={setCustomTimer}
-            className="bg-blue-500 text-white rounded-lg px-6 py-2 w-24 mr-2 mb-2"
+            className="bg-blue-500 text-white rounded-lg px-6 py-2 w-24 mr-2 mb-2 hover:bg-orange-400 transition-colors duration-300"
           >
             Set
           </button>
@@ -166,7 +192,7 @@ const PomodoroTimer = () => {
             <h2 className="text-2xl text-red-600 mb-4">Time is up!</h2>
             <button
               onClick={closeTimerAlert}
-              className="bg-blue-500 text-white px-6 py-2 rounded-lg"
+              className="bg-blue-500 text-white px-6 py-2 rounded-lg  hover:bg-green-600 transition-colors duration-300"
             >
               Close
             </button>

@@ -137,7 +137,7 @@ function Todo() {
         ) : (
           <button
             onClick={handleAddTodo}
-            className="bg-blue-500 text-white px-4 rounded-r"
+            className="bg-blue-500 text-white px-4 rounded-r  hover:bg-green-600 transition-colors duration-300"
           >
             Add
           </button>

@@ -38,3 +38,12 @@
   color: #333;
   text-align: center;
 }
+
+.button {
+  /* Diğer stillendirmeler */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #e2e8f0; /* Hover rengi */
+}
