@@ -1,4 +1,4 @@
-<img width="956" alt="image" src="https://github.com/ibrahimfevzi/to-do-nextjs/assets/84006626/3f5b5fb0-a713-4b6b-bcbf-a95eae085275">
+<img width="1043" alt="image" src="https://github.com/ibrahimfevzi/to-do-nextjs/assets/84006626/5e451c88-f7ef-47b7-b836-e00e978de31b">
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
